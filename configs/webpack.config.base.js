@@ -4,6 +4,7 @@
 
 import path from 'path';
 import webpack from 'webpack';
+import PnpWebpackPlugin from 'pnp-webpack-plugin';
 import { dependencies } from '../package.json';
 
 export default {
@@ -35,6 +36,12 @@ export default {
    */
   resolve: {
     extensions: ['.js', '.jsx', '.json']
+  },
+
+  resolveLoader: {
+    plugins: [
+      PnpWebpackPlugin.moduleLoader(module),
+    ]
   },
 
   plugins: [

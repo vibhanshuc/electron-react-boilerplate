@@ -162,7 +162,8 @@
     },
     "setupFiles": [
       "./internals/scripts/CheckBuiltsExist.js"
-    ]
+    ],
+    "resolver": "jest-pnp-resolver"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -228,11 +229,13 @@
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
+    "jest-pnp-resolver": "^1.0.1",
     "lint-staged": "^7.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
     "opencollective-postinstall": "^2.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "pnp-webpack-plugin": "^1.2.0",
     "prettier": "^1.14.3",
     "react-test-renderer": "^16.4.1",
     "redux-logger": "^3.0.6",
