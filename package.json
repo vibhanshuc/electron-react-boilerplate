@@ -102,12 +102,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/data-peace/electron-react-boilerplate.git"
+    "url": "git+https://gitlab.com/vibhanshuc/electron-react-boilerplate.git"
   },
   "author": "Data Peace Dev <dev@datapeace.in>",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/data-peace/electron-react-boilerplate/issues"
+    "url": "https://gitlab.com/vibhanshuc/electron-react-boilerplate/issues"
   },
   "keywords": [
     "electron",
@@ -120,7 +120,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://gitlab.com/data-peace/electron-react-boilerplate",
+  "homepage": "https://gitlab.com/vibhanshuc/electron-react-boilerplate",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {
