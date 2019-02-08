@@ -16,11 +16,13 @@
     "lint-fix": "yarn --silent lint --fix; exit 0",
     "lint-styles": "stylelint --ignore-path .eslintignore '**/*.*(css|scss)' --syntax scss",
     "lint-styles-fix": "yarn --silent lint-styles --fix; exit 0",
-    "package": "yarn build && electron-builder build --publish never",
-    "package-all": "yarn build && electron-builder build -mwl",
-    "package-ci": "yarn postinstall && yarn build && electron-builder --publish always",
-    "package-linux": "yarn build && electron-builder build --linux",
-    "package-win": "yarn build && electron-builder build --win --x64",
+    "package": "yarn build && electron-builder build --publish never --config ./electron-builder.js",
+    "package:debug": "cross-env DEBUG_PROD=true yarn build && cross-env DEBUG_PROD=true electron-builder build --publish never --config ./electron-builder.js",
+    "package-all": "yarn build && electron-builder build -mwl --config ./electron-builder.js",
+    "package-ci:debug": "yarn postinstall && cross-env DEBUG_PROD=true yarn build && cross-env DEBUG_PROD=true electron-builder --publish always --config ./electron-builder.js",
+    "package-ci": "yarn postinstall && yarn build && electron-builder --publish always --config ./electron-builder.js",
+    "package-linux": "yarn build && electron-builder build --linux --config ./electron-builder.js",
+    "package-win": "yarn build && electron-builder build --win --x64 --config ./electron-builder.js",
     "postinstall": "yarn flow-typed && electron-builder install-app-deps package.json && yarn build-dll",
     "postlint-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{js,jsx,json,html,css,less,scss,yml}'",
     "postlint-styles-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{css,scss}'",
@@ -55,51 +57,6 @@
     ]
   },
   "main": "./app/main.prod.js",
-  "build": {
-    "productName": "1upvision Producer",
-    "appId": "com.1upvision.producer",
-    "copyright": "Copyright © 2019 1upvision.com",
-    "files": [
-      "app/dist/",
-      "app/app.html",
-      "app/main.prod.js",
-      "app/main.prod.js.map",
-      "package.json"
-    ],
-    "dmg": {
-      "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "msi"
-      ]
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "rpm",
-        "snap",
-        "AppImage"
-      ],
-      "category": "Development"
-    },
-    "directories": {
-      "buildResources": "resources",
-      "output": "release"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/vibhanshuc/electron-react-boilerplate.git"
