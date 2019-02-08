@@ -1,5 +1,9 @@
 {
   "extends": "erb",
+  "env": {
+    "jest/globals": true
+  },
+  "plugins": ["jest"],
   "settings": {
     "import/resolver": {
       "webpack": {
