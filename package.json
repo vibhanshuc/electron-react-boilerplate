@@ -1,7 +1,7 @@
 {
   "name": "1upvision-producer",
   "productName": "1upvision Producer",
-  "version": "0.17.1",
+  "version": "0.17.2",
   "description": "Desktop application for streaming CCTV feed to 1upvision cloud.",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
