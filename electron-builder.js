@@ -40,9 +40,11 @@ module.exports = {
     buildResources: 'resources',
     output: 'release'
   },
-  publish: {
-    provider: 'github',
-    repo: 'electron-react-boilerplate',
-    owner: 'vibhanshuc'
-  }
+  publish: [
+    {
+      provider: 'github',
+      repo: 'electron-react-boilerplate',
+      owner: 'vibhanshuc'
+    }
+  ]
 };
