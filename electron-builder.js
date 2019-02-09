@@ -33,11 +33,16 @@ module.exports = {
     target: ['nsis', 'msi']
   },
   linux: {
-    target: ['deb', 'rpm', 'snap', 'AppImage'],
+    target: ['deb'],
     category: 'Development'
   },
   directories: {
     buildResources: 'resources',
     output: 'release'
+  },
+  publish: {
+    provider: 'github',
+    repo: 'electron-react-boilerplate',
+    owner: 'vibhanshuc'
   }
 };
